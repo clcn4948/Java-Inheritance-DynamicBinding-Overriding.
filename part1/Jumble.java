@@ -1,5 +1,5 @@
 
-public abstract class Jumble extends Seq
+public class Jumble extends Seq
 {
     Jumble( int [] values)
     {
@@ -8,16 +8,14 @@ public abstract class Jumble extends Seq
         valuesP = values;
         
     }//constructor
-
-private:
     
-    int[] valuesP;
+    private int[] valuesP;
     
     // overriding toString - see Constant.java for descript
-    String toString()
+    private String toString()
     {
         int size = valuesP.length;
-        return "{ " + size + " : " valuesP + " }";
+        return "{ " + size + " : " + valuesP + " }";
     }
     
 }

@@ -3,19 +3,19 @@
  */
 
 //SEQ is its base class
-public abstract class Constant extends Seq
+public class Constant extends Seq
 {
     Constant( int num, int value)
     {
         numP = num;
         valueP = value;
     }//Constructor
-private:
-    int numP;
-    int valueP;
+
+    private int numP;
+    private int valueP;
     
     /*  overriding toString method (within the Object class->no need to declare within Seq*/
-    String toString()
+    private String toString()
     {
         return "[ " + numP + " : " + valueP + " ]";
     }
