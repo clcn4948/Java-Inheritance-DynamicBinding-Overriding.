@@ -5,17 +5,23 @@
 //SEQ is its base class
 public class Constant extends Seq
 {
+    private int numP;
+    private int valueP;
+
     Constant( int num, int value)
     {
         numP = num;
         valueP = value;
     }//Constructor
 
-    private int numP;
-    private int valueP;
     
-    /*  overriding toString method (within the Object class->no need to declare within Seq*/
-    private String toString()
+    /*  
+        overriding toString method (within the Object class->no need to declare within Seq
+     
+        Had to make public, else this error: 
+                    attempting to assign weaker access privileges; was public
+     */
+    public String toString()
     {
         return "[ " + numP + " : " + valueP + " ]";
     }

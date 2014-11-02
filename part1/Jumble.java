@@ -1,6 +1,9 @@
 
 public class Jumble extends Seq
 {
+     private int[] valuesP;
+    
+    
     Jumble( int [] values)
     {
         int size = values.length;
@@ -9,10 +12,10 @@ public class Jumble extends Seq
         
     }//constructor
     
-    private int[] valuesP;
+   
     
     // overriding toString - see Constant.java for descript
-    private String toString()
+    public String toString()
     {
         int size = valuesP.length;
         return "{ " + size + " : " + valuesP + " }";
