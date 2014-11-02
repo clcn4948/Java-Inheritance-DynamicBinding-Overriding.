@@ -5,8 +5,8 @@
 //SEQ is its base class
 public class Constant extends Seq
 {
-    private int numP;
-    private int valueP;
+    protected int numP;
+    protected int valueP;
 
     Constant( int num, int value)
     {
@@ -23,7 +23,13 @@ public class Constant extends Seq
      */
     public String toString()
     {
-        return "[ " + numP + " : " + valueP + " ]";
+        //special case, num = 0
+        if(numP == 0)
+        {
+            valueP = 0;
+        }
+        
+        return ("[ " + numP + " : " + valueP + " ]");
     }
     
     
