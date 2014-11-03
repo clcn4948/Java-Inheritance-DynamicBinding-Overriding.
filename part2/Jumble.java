@@ -35,4 +35,28 @@ public class Jumble extends Seq
      //   return ("{ " + size + " : " + valuesP + " }"); <-- can not print out an array like this! gives crap!
     }
     
+    //abstract method w/in Seq
+    public int min()
+    {
+        if( valuesP.length == 0)
+        {
+            return 0;
+        }
+        else
+        {
+            int temp = valuesP[0];
+            for(int x: valuesP)
+            {
+                if( x < temp)
+                {
+                    temp = x;   //replacing with num w/in valuesP that's smaller
+                }
+            }
+            
+            return temp;
+        }//else()
+    }//min()
+    
+    
+    
 }

@@ -1,6 +1,4 @@
-/*  Abstract classes can't be called by an instance, but can be subclassed
-    Usually used to have a common functionality with a collection of children abstract classes
- */
+
 
 //SEQ is its base class
 public class Constant extends Seq
@@ -32,5 +30,10 @@ public class Constant extends Seq
         return ("[ " + numP + " : " + valueP + " ]");
     }
     
+    //abstract method w/in Seq
+    public int min()
+    {
+        return (valueP); // <-- according to Main.java, returns valueP only
+    }
     
 }
