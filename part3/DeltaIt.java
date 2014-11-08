@@ -30,9 +30,9 @@ public class DeltaIt implements SeqIt {
     public int next()
     {
         //next invoked when no elements remain
-        if( i_num == 0)
+        if( i_num <= 0)
         {
-            System.err.println("No elements remain in Delta");
+            System.err.println("DeltaIt called past end");
             System.exit(1);
         }
         

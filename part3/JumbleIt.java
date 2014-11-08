@@ -30,9 +30,9 @@ public class JumbleIt implements SeqIt {
     public int next()
     {
         //when next() invoked s.t. no elements remain
-        if( jumble_object.valuesP.length == 0)
+        if( i == jumble_object.valuesP.length)
         {
-            System.err.println("Invoking next() in jumble wrong");
+            System.err.println("JumbleIt called past end");
             System.exit(1);
         }
         
