@@ -3,7 +3,7 @@ public class JumbleIt implements SeqIt {
    
     protected Jumble jumble_object;
     protected int i;
-    
+       
     JumbleIt( Jumble s)
     {
         jumble_object = s; 
@@ -14,7 +14,7 @@ public class JumbleIt implements SeqIt {
     // any more elements?
     public boolean hasNext()
     {
-        if( jumble_object.valuesP[i+1] ) //if exist within the array
+        if( i < jumble_object.valuesP.length) //if exist within the array
         {
             return true;
         }

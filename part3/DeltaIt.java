@@ -12,7 +12,7 @@ public class DeltaIt implements SeqIt {
         i_num = s.numberP; //numberP = total numbers in the sequence
         i_initial = s.initialP;
         i_delta = s.deltaP;
-        i = 1;
+        i = 0;
     } //constructor
     
     public boolean hasNext()

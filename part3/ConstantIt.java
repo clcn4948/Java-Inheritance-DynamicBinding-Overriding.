@@ -9,13 +9,13 @@ public class ConstantIt implements SeqIt {
     ConstantIt( Constant s){
         constant_object = s;
         i_value = s.valueP;
-        i_num = s.numP;
+        i_num = 0;
     }; //constructor
     
     //These methods are defined with the implementation
     public boolean hasNext()
     {
-        if(i_num != 0)
+        if(i_num < constant_object.numP)
         {
             return true;
         }
@@ -27,8 +27,17 @@ public class ConstantIt implements SeqIt {
     // return the next element and advance iterator to following item.
     public int next()
     {
-        --i_num;
-        //  from output.correct, it only returns the value (num) times
+        //if we're already at NUMP that means we don't have anymore 'next'
+        if( i_num == constant_object.numP)
+        {
+           System.err.println("ConstantIt called past end");
+            System.exit(1);
+        }
+        
+        
+        ++i_num; //counter to how many times we have printed out VALUE, it has to be less than I_NUM!
+        
+        //  from output.correct, it only returns the i_value , i_num amount of times
         return i_value;
     }
 }

@@ -1,5 +1,4 @@
-public class JumbleUser extends JumbleIt //uses jumbleit's methods
-{
+public class JumbleUser {
     /*  NDCSS = non-decreasing contiguous subsequence (subset)
         ex:
             S: 5 6 7 1 2 2 3
@@ -25,6 +24,11 @@ public class JumbleUser extends JumbleIt //uses jumbleit's methods
     /*  Find length of longest NDCSS w/in Jumble j  */
     public static int lengthLongestNDCSS1(Jumble j)
     {
+        int checking_orig;
+        int checking_next;
+        int length = 1;
+        int temp_length = 1;
+        
         //Jumble is an array of numbers
         if(j.valuesP.length == 0)
         {
@@ -33,11 +37,31 @@ public class JumbleUser extends JumbleIt //uses jumbleit's methods
         else
         {
             JumbleIt j_it = new JumbleIt(j);    //passes j to the constructor
-            while( hasNext() )
+             checking_orig = j_it.next(); //first item
+            while( j_it.hasNext() )
             {
+                checking_next = j_it.next();
                 
-            }
-        }
+                if( checking_orig <= checking_next)
+                {
+                    temp_length++;
+                    if(length < temp_length)
+                    {
+                        length = temp_length; //replace longest NDCSS length , else we keep orig value
+                    }
+                    
+                }
+                else
+                {
+                    temp_length = 1; //reset temp length
+                   
+                }
+                
+                checking_orig = checking_next; //replace the 'original' number
+                
+            }//while()
+        }//else()
+        return length;
     }
 
 }
